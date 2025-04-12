@@ -1,8 +1,20 @@
 
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { Button } from './ui/button';
+import { useEffect, useState } from 'react';
 
 const HeroSection = () => {
+  const [animate, setAnimate] = useState(false);
+  
+  // Animation effect for the profile photo
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAnimate(prev => !prev);
+    }, 3000);
+    
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section id="home" className="min-h-screen flex items-center pt-16 bg-gradient-to-br from-background to-secondary/20">
       <div className="section-container flex flex-col md:flex-row items-center">
@@ -31,7 +43,9 @@ const HeroSection = () => {
         
         <div className="w-full md:w-1/2 flex justify-center animate-fade-in" style={{ animationDelay: '300ms' }}>
           <div className="relative">
-            <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-highlight/20 overflow-hidden border-4 border-highlight/30">
+            <div 
+              className={`w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-highlight/20 overflow-hidden border-4 border-highlight/30 transition-all duration-1000 ease-in-out ${animate ? 'transform translate-y-2' : 'transform -translate-y-2'}`}
+            >
               {/* Replace with your image */}
               <img 
                 src="https://placehold.co/600x600/6E59A5/FFFFFF/png?text=Your+Photo" 
@@ -39,9 +53,7 @@ const HeroSection = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="absolute -bottom-6 -right-6 w-24 h-24 rounded-full bg-highlight flex items-center justify-center text-white font-bold text-sm animate-pulse">
-              Available for Hire
-            </div>
+            {/* Removed the "Available for Hire" bubble */}
           </div>
         </div>
       </div>
