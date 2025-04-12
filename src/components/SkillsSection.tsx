@@ -1,6 +1,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { Card, CardContent } from './ui/card';
+import { Progress } from './ui/progress';
 
 interface Skill {
   name: string;
@@ -23,6 +24,7 @@ const SkillsSection = () => {
     { name: 'Express', percentage: 85, category: 'Backend' },
     { name: 'MongoDB', percentage: 75, category: 'Backend' },
     { name: 'PostgreSQL', percentage: 70, category: 'Backend' },
+    { name: 'SQL', percentage: 80, category: 'Backend' },
     { name: 'AWS', percentage: 65, category: 'DevOps' },
     { name: 'Docker', percentage: 70, category: 'DevOps' },
   ];
