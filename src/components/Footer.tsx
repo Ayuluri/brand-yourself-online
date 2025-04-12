@@ -1,5 +1,5 @@
 
-import { GitHub, Linkedin, Mail, Twitter } from 'lucide-react';
+import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -24,7 +24,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="hover:text-highlight transition-colors"
               >
-                <GitHub size={20} />
+                <Github size={20} />
               </a>
               <a 
                 href="https://linkedin.com/in/yourusername" 

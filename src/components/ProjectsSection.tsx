@@ -1,6 +1,5 @@
-
 import { useState } from 'react';
-import { ExternalLink, GitHub } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
 
@@ -130,7 +129,7 @@ const ProjectsSection = () => {
                         rel="noopener noreferrer"
                         className="inline-block p-2 bg-background/80 backdrop-blur-sm rounded-full hover:bg-highlight transition-colors mr-2"
                       >
-                        <GitHub size={20} />
+                        <Github size={20} />
                       </a>
                       <a 
                         href={project.demoLink} 
