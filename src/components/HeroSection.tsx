@@ -5,6 +5,15 @@ import { useEffect, useState } from 'react';
 
 const HeroSection = () => {
   const [animate, setAnimate] = useState(false);
+  const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
+  const [fadeState, setFadeState] = useState('in');
+  
+  const titles = [
+    "Frontend Developer",
+    "UI/UX Designer",
+    "Full Stack Engineer",
+    "React Specialist"
+  ];
   
   // Animation effect for the profile photo
   useEffect(() => {
@@ -15,6 +24,27 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // Title rotation effect
+  useEffect(() => {
+    const fadeOutTimer = setTimeout(() => {
+      if (fadeState === 'in') {
+        setFadeState('out');
+      }
+    }, 3500); // Start fading out after 3.5s
+
+    const fadeInTimer = setTimeout(() => {
+      if (fadeState === 'out') {
+        setCurrentTitleIndex(prev => (prev + 1) % titles.length);
+        setFadeState('in');
+      }
+    }, 4000); // Change text and fade in after 4s
+
+    return () => {
+      clearTimeout(fadeOutTimer);
+      clearTimeout(fadeInTimer);
+    };
+  }, [fadeState, titles.length]);
+
   return (
     <section id="home" className="min-h-screen flex items-center pt-16 bg-gradient-to-br from-background to-secondary/20">
       <div className="section-container flex flex-col md:flex-row items-center">
@@ -22,8 +52,8 @@ const HeroSection = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
             Hi, I'm <span className="text-gradient">Your Name</span>
           </h1>
-          <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-muted-foreground">
-            Your Title / Position
+          <h2 className={`text-2xl md:text-3xl font-semibold mb-6 text-muted-foreground transition-opacity duration-500 ${fadeState === 'in' ? 'opacity-100' : 'opacity-0'}`}>
+            {titles[currentTitleIndex]}
           </h2>
           <p className="text-lg mb-8 max-w-xl">
             A passionate developer with expertise in web development, 
