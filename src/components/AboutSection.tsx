@@ -1,8 +1,16 @@
 
 import { Button } from './ui/button';
-import { Separator } from './ui/separator';
+import { Download } from 'lucide-react';
 
 const AboutSection = () => {
+  const handleDownloadResume = () => {
+    // Create a link element to trigger the download
+    const link = document.createElement('a');
+    link.href = '/resume.pdf'; // Update this path to your actual resume file
+    link.download = 'Sai_Narasimha_Reddy_Ayuluri_Resume.pdf';
+    link.click();
+  };
+
   return (
     <section id="about" className="py-20 bg-gradient-to-bl from-background to-secondary/20">
       <div className="section-container">
@@ -21,10 +29,12 @@ const AboutSection = () => {
             </p>
             
             <div className="flex justify-center">
-              <Button className="bg-highlight hover:bg-highlight/80">
-                <a href="https://github.com/OneStop" target="_blank" rel="noopener noreferrer">
-                  View GitHub Profile
-                </a>
+              <Button 
+                onClick={handleDownloadResume} 
+                className="bg-highlight hover:bg-highlight/80 flex items-center gap-2"
+              >
+                <Download className="h-4 w-4" />
+                Download Resume
               </Button>
             </div>
           </div>
