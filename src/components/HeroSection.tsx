@@ -9,10 +9,10 @@ const HeroSection = () => {
   const [fadeState, setFadeState] = useState('in');
   
   const titles = [
-    "Frontend Developer",
-    "UI/UX Designer",
+    "MS Computer Science Student",
     "Full Stack Engineer",
-    "React Specialist"
+    "React Specialist",
+    "Team Lead"
   ];
   
   // Animation effect for the profile photo
@@ -50,14 +50,14 @@ const HeroSection = () => {
       <div className="section-container flex flex-col md:flex-row items-center">
         <div className="w-full md:w-1/2 mb-10 md:mb-0 animate-fade-in">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-            Hi, I'm <span className="text-gradient">Your Name</span>
+            Hi, I'm <span className="text-gradient">Sai Narasimha Reddy Ayuluri</span>
           </h1>
           <h2 className={`text-2xl md:text-3xl font-semibold mb-6 text-muted-foreground transition-opacity duration-500 ${fadeState === 'in' ? 'opacity-100' : 'opacity-0'}`}>
             {titles[currentTitleIndex]}
           </h2>
           <p className="text-lg mb-8 max-w-xl">
-            A passionate developer with expertise in web development, 
-            focused on creating elegant solutions to complex problems.
+            A passionate developer with expertise in web development, React Native, MongoDB, 
+            and full-stack engineering, focused on creating elegant solutions to complex problems.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button className="bg-highlight hover:bg-highlight/80 text-white">
@@ -78,7 +78,7 @@ const HeroSection = () => {
             >
               {/* Replace with your image */}
               <img 
-                src="https://placehold.co/600x600/6E59A5/FFFFFF/png?text=Your+Photo" 
+                src="https://placehold.co/600x600/6E59A5/FFFFFF/png?text=Sai+Ayuluri" 
                 alt="Profile" 
                 className="w-full h-full object-cover"
               />

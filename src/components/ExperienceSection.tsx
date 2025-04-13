@@ -23,31 +23,31 @@ const ExperienceSection = () => {
 
   const experiences = [
     {
-      role: "Student Assistant",
-      company: "NYS Department of Health",
-      period: "August 2024 - Present",
-      location: "Albany, New York",
+      role: "Team Lead",
+      company: "SUNY RF",
+      period: "Dec 2024 - Jun 2025",
+      location: "Albany, NY",
       side: "left",
     },
     {
-      role: "M.S in Data Science",
+      role: "M.S in Computer Science",
       company: "SUNY at Albany",
-      period: "Aug 2023 - May 2025",
+      period: "Aug 2023 - Dec 2025",
       location: "Albany, NY",
       side: "right",
     },
     {
-      role: "Senior Systems Engineer",
-      company: "Infosys Limited",
-      period: "Sep 2020 - Jul 2023",
+      role: "Software Engineer Intern",
+      company: "Shiash Info Tech",
+      period: "Jan 2023 - Jun 2023",
       location: "Hyderabad, India",
       side: "left",
     },
     {
-      role: "B.Tech in Computer Science",
-      company: "JNTU Hyderabad",
-      period: "June 2016 - Sep 2020",
-      location: "Hyderabad, India",
+      role: "Junior Software Engineer Intern",
+      company: "Numeregeon Technologies",
+      period: "Sep 2020 - Dec 2020",
+      location: "Remote",
       side: "right",
     }
   ];

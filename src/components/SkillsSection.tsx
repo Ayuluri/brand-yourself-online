@@ -1,7 +1,6 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { Card, CardContent } from './ui/card';
-import { Progress } from './ui/progress';
 
 interface Skill {
   name: string;
@@ -14,24 +13,26 @@ const SkillsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   
   const skills: Skill[] = [
-    { name: 'HTML5', percentage: 95, category: 'Frontend' },
-    { name: 'CSS3/SASS', percentage: 90, category: 'Frontend' },
-    { name: 'JavaScript', percentage: 85, category: 'Frontend' },
-    { name: 'TypeScript', percentage: 80, category: 'Frontend' },
+    // Languages
+    { name: 'Python', percentage: 90, category: 'Languages' },
+    { name: 'Java', percentage: 85, category: 'Languages' },
+    { name: 'C/C++', percentage: 75, category: 'Languages' },
+    // Frontend
     { name: 'React', percentage: 90, category: 'Frontend' },
-    { name: 'Angular', percentage: 75, category: 'Frontend' },
-    { name: 'Node.js', percentage: 80, category: 'Backend' },
-    { name: 'Express', percentage: 85, category: 'Backend' },
-    { name: 'MongoDB', percentage: 75, category: 'Backend' },
-    { name: 'PostgreSQL', percentage: 70, category: 'Backend' },
-    { name: 'SQL', percentage: 80, category: 'Backend' },
-    { name: 'AWS', percentage: 65, category: 'DevOps' },
-    { name: 'Docker', percentage: 70, category: 'DevOps' },
+    { name: 'JavaScript', percentage: 85, category: 'Frontend' },
+    { name: 'Angular', percentage: 80, category: 'Frontend' },
+    { name: 'HTML/CSS', percentage: 85, category: 'Frontend' },
+    { name: 'Bootstrap', percentage: 80, category: 'Frontend' },
+    // Backend
+    { name: 'Express.js', percentage: 85, category: 'Backend' },
+    { name: 'Django', percentage: 80, category: 'Backend' },
+    { name: 'MongoDB', percentage: 85, category: 'Backend' },
+    { name: 'MySQL', percentage: 80, category: 'Backend' },
   ];
   
+  const languageSkills = skills.filter(skill => skill.category === 'Languages');
   const frontendSkills = skills.filter(skill => skill.category === 'Frontend');
   const backendSkills = skills.filter(skill => skill.category === 'Backend');
-  const devOpsSkills = skills.filter(skill => skill.category === 'DevOps');
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -85,6 +86,13 @@ const SkillsSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <Card className="border border-border bg-background/50 backdrop-blur-sm hover:border-highlight/50 transition-all">
             <CardContent className="p-6">
+              <h3 className="text-xl font-bold mb-6 text-gradient">Programming Languages</h3>
+              {renderSkillsForCategory(languageSkills)}
+            </CardContent>
+          </Card>
+          
+          <Card className="border border-border bg-background/50 backdrop-blur-sm hover:border-highlight/50 transition-all">
+            <CardContent className="p-6">
               <h3 className="text-xl font-bold mb-6 text-gradient">Frontend Development</h3>
               {renderSkillsForCategory(frontendSkills)}
             </CardContent>
@@ -94,13 +102,6 @@ const SkillsSection = () => {
             <CardContent className="p-6">
               <h3 className="text-xl font-bold mb-6 text-gradient">Backend Development</h3>
               {renderSkillsForCategory(backendSkills)}
-            </CardContent>
-          </Card>
-          
-          <Card className="border border-border bg-background/50 backdrop-blur-sm hover:border-highlight/50 transition-all">
-            <CardContent className="p-6">
-              <h3 className="text-xl font-bold mb-6 text-gradient">DevOps & Tools</h3>
-              {renderSkillsForCategory(devOpsSkills)}
             </CardContent>
           </Card>
         </div>

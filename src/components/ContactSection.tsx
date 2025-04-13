@@ -8,20 +8,20 @@ const ContactSection = () => {
     {
       icon: <Mail className="h-8 w-8 text-highlight" />,
       title: 'Email',
-      value: 'your.email@example.com',
-      link: 'mailto:your.email@example.com',
+      value: 'sainarasimhareddyayuluri@gmail.com',
+      link: 'mailto:sainarasimhareddyayuluri@gmail.com',
     },
     {
       icon: <Phone className="h-8 w-8 text-highlight" />,
       title: 'Phone',
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567',
+      value: '+1-838-265-9814',
+      link: 'tel:+18382659814',
     },
     {
       icon: <MapPin className="h-8 w-8 text-highlight" />,
       title: 'Location',
-      value: 'City, Country',
-      link: 'https://maps.google.com/?q=City,Country',
+      value: 'Albany, NY',
+      link: 'https://maps.google.com/?q=Albany,NY',
     },
   ];
 
@@ -53,7 +53,7 @@ const ContactSection = () => {
         
         <div className="flex justify-center mt-12">
           <Button className="bg-highlight hover:bg-highlight/80 text-white px-8">
-            <a href="mailto:your.email@example.com">
+            <a href="mailto:sainarasimhareddyayuluri@gmail.com">
               Send Me An Email
             </a>
           </Button>
