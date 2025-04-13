@@ -1,69 +1,35 @@
 
-import { Calendar, Award, Book, Briefcase } from 'lucide-react';
-import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
 
 const AboutSection = () => {
-  const experienceItems = [
-    {
-      icon: <Briefcase className="h-8 w-8 text-highlight" />,
-      title: '3+ Years',
-      description: 'Professional Experience'
-    },
-    {
-      icon: <Award className="h-8 w-8 text-highlight" />,
-      title: '15+ Projects',
-      description: 'Completed'
-    },
-    {
-      icon: <Calendar className="h-8 w-8 text-highlight" />,
-      title: '99% Success',
-      description: 'Client Satisfaction'
-    },
-    {
-      icon: <Book className="h-8 w-8 text-highlight" />,
-      title: 'Continuous',
-      description: 'Learning & Growth'
-    },
-  ];
-
   return (
     <section id="about" className="py-20 bg-gradient-to-bl from-background to-secondary/20">
       <div className="section-container">
         <div className="flex flex-col items-center">
           <h2 className="section-title">About Me</h2>
-          <p className="text-lg mb-6 max-w-3xl text-center">
-            I am a passionate developer with a strong background in building web applications
-            that are not only functional but also user-friendly and aesthetically pleasing.
-            My journey in tech started several years ago, and since then I've been constantly
-            learning and improving my skills.
-          </p>
-          <p className="text-lg mb-8 max-w-3xl text-center">
-            I specialize in creating responsive, accessible, and performant web experiences
-            using modern technologies like React, TypeScript, and TailwindCSS. I'm always eager
-            to tackle new challenges and collaborate with teams that share my passion for
-            quality code and exceptional user experiences.
-          </p>
           
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8 w-full max-w-4xl">
-            {experienceItems.map((item, index) => (
-              <Card key={index} className="border border-border bg-background/50 backdrop-blur-sm hover:border-highlight/50 transition-all group">
-                <CardContent className="p-4 flex flex-col items-center text-center">
-                  <div className="mb-2 group-hover:scale-110 transition-transform">
-                    {item.icon}
-                  </div>
-                  <h3 className="font-bold text-lg">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="max-w-3xl w-full border-2 border-highlight/50 rounded-xl p-8 bg-background/50 backdrop-blur-sm shadow-lg hover:border-highlight transition-all duration-300">
+            <p className="text-lg mb-6">
+              I am a passionate developer with a strong background in building web applications
+              that are not only functional but also user-friendly and aesthetically pleasing.
+              My journey in tech started several years ago, and since then I've been constantly
+              learning and improving my skills.
+            </p>
+            <p className="text-lg mb-8">
+              I specialize in creating responsive, accessible, and performant web experiences
+              using modern technologies like React, TypeScript, and TailwindCSS. I'm always eager
+              to tackle new challenges and collaborate with teams that share my passion for
+              quality code and exceptional user experiences.
+            </p>
+            
+            <div className="flex justify-center">
+              <Button className="bg-highlight hover:bg-highlight/80">
+                <a href="https://drive.google.com/your-resume-link" target="_blank" rel="noopener noreferrer">
+                  Download Resume
+                </a>
+              </Button>
+            </div>
           </div>
-          
-          <Button className="bg-highlight hover:bg-highlight/80">
-            <a href="https://drive.google.com/your-resume-link" target="_blank" rel="noopener noreferrer">
-              Download Resume
-            </a>
-          </Button>
         </div>
       </div>
     </section>
